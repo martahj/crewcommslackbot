@@ -1,4 +1,4 @@
 require('babel-register');
 
-const bot = require('./bot').default;
-bot();
+const bothandler = require('./bot').default;
+bothandler();
