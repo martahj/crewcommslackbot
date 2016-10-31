@@ -10,6 +10,7 @@ if (process.env.NODE_ENV === 'production') {
   const { HANNIBAL_API_TOKEN } = config;
   token = HANNIBAL_API_TOKEN;
 }
+console.log('token', token);
 
 const controller = botkit.slackbot({});
 
