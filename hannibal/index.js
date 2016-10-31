@@ -20,6 +20,7 @@ const bot = controller.spawn({
 
 const bothandler = () => {
   controller.hears(['hi'], 'direct_message,direct_mention', (bot, message) => {
+    console.log('in bothandler');
     bot.reply(message, '/giphy crew');
   });
 };
