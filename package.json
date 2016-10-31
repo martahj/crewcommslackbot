@@ -7,6 +7,9 @@
     "start": "node index",
     "test": "test"
   },
+  "engines": {
+    "node": "6.3.1",
+  },
   "author": "",
   "license": "ISC",
   "dependencies": {
