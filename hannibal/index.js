@@ -1,7 +1,15 @@
 import botkit from 'botkit';
-import config from '../config';
-const { HANNIBAL_API_TOKEN } = config;
-const token = process.env.HANNIBAL || HANNIBAL_API_TOKEN;
+
+let token;
+if (process.env.NODE_ENV === 'production') {
+  console.log('in production');
+  token = process.env.HANNIBAL;
+} else {
+  const config = require('../config').default;
+  console.log('got config', config);
+  const { HANNIBAL_API_TOKEN } = config;
+  token = HANNIBAL_API_TOKEN;
+}
 
 const controller = botkit.slackbot({});
 
