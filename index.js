@@ -1,4 +1,10 @@
 require('babel-register');
 
-const bothandler = require('./bot').default;
-bothandler();
+const bothandlers = [
+  require('./hannibal/index').default,
+  require('./eggsBenedict/index').default,
+];
+
+bothandlers.forEach((bothandler) => {
+  bothandler();
+});
