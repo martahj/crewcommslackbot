@@ -1,13 +1,12 @@
 import botkit from 'botkit';
 import config from '../config';
 const { HANNIBAL_API_TOKEN } = config;
+const token = process.env.HANNIBAL || HANNIBAL_API_TOKEN;
 
-const controller = botkit.slackbot({
-  debug: true,
-});
+const controller = botkit.slackbot({});
 
 const bot = controller.spawn({
-  token: HANNIBAL_API_TOKEN,
+  token,
 }).startRTM();
 
 const bothandler = () => {
